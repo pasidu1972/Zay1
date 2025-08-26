@@ -1,0 +1,468 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Smart Trade</title>
+        <meta name="robots" content="noindex, follow" />
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+
+
+
+        <!-- Favicon -->
+       
+        <title>Zay Shop eCommerce HTML CSS Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+
+
+        <!-- CSS
+        ============================================ -->
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/vendor/font-awesome.css">
+        <link rel="stylesheet" href="assets/css/vendor/flaticon/flaticon.css">
+        <link rel="stylesheet" href="assets/css/vendor/slick.css">
+        <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
+        <link rel="stylesheet" href="assets/css/vendor/jquery-ui.min.css">
+        <link rel="stylesheet" href="assets/css/vendor/sal.css">
+        <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/vendor/base.css">
+        <link rel="stylesheet" href="assets/css/style.min.css">
+
+        <link rel="stylesheet" href="assets/css/notification.css">
+
+         <style>
+        /* Add this CSS to your main stylesheet or in the head of each page */
+        .dropdown-toggle::after {
+            display: none !important;
+        }
+        .user-dropdown .dropdown-item {
+            padding: 10px 20px;
+        }
+        .user-dropdown .dropdown-item i {
+            margin-right: 8px;
+            width: 16px;
+        }
+        .user-name {
+            font-size: 0.9em;
+            color: #6c757d;
+            padding: 5px 20px;
+            border-bottom: 1px solid #dee2e6;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+    </style>
+
+    </head>
+
+
+    <body class="sticky-header" onload="loadCheckoutData();">
+        <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+        <a href="#top" class="back-to-top" id="backto-top"><i class="fal fa-arrow-up"></i></a>
+       
+   <!-- Header -->
+<nav class="navbar navbar-expand-lg navbar-light shadow">
+    <div class="container d-flex justify-content-between align-items-center">
+
+        <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+            Zay
+        </a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+            data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between"
+            id="templatemo_main_nav">
+            <div class="flex-fill">
+                <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="navbar align-self-center d-flex">
+                <!-- Mobile Search -->
+                <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+                        <div class="input-group-text">
+                            <i class="fa fa-fw fa-search"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search Icon -->
+                <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal"
+                    data-bs-target="#templatemo_search">
+                    <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                </a>
+
+                <!-- Cart -->
+                <a class="nav-icon position-relative text-decoration-none" href="cart.html">
+                    <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                    <span
+                        class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
+                </a>
+
+                <!-- User Profile Dropdown -->
+                <div class="dropdown">
+                    <a class="nav-icon position-relative text-decoration-none dropdown-toggle" href="#"
+                        role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-fw fa-user text-dark mr-3"></i>
+                        <span
+                            class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"
+                            id="userBadge">+99</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end user-dropdown" aria-labelledby="userDropdown">
+                        <!-- User name display when signed in -->
+                        <li id="userNameDisplay" class="user-name d-none">Welcome, User!</li>
+
+                        <!-- Options when NOT signed in -->
+                        <li id="signInOption">
+                            <a class="dropdown-item" href="sign-in.html">
+                                <i class="fas fa-sign-in-alt"></i> Sign In
+                            </a>
+                        </li>
+                        <li id="signUpOption">
+                            <a class="dropdown-item" href="sign-up.html">
+                                <i class="fas fa-user-plus"></i> Sign Up
+                            </a>
+                        </li>
+
+                        <!-- Options when signed in -->
+                        <li id="profileOption" class="d-none">
+                            <a class="dropdown-item" href="my-account.html">
+                                <i class="fas fa-user"></i> Profile
+                            </a>
+                        </li>
+                        <li id="signOutOption" class="d-none">
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li id="signOutButton" class="d-none">
+                            <a class="dropdown-item" href="#" onclick="signOut()">
+                                <i class="fas fa-sign-out-alt"></i> Sign Out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Purchase History -->
+                <a class="nav-icon position-relative text-decoration-none" href="purchasinghistory.html">
+                    <i class="fa fa-fw fa-receipt text-dark mr-3"></i>
+                    <span
+                        class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+9</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- Close Header -->
+
+
+        <main class="main-wrapper">
+
+            <!-- Start Checkout Area  -->
+            <div class="axil-checkout-area axil-section-gap">
+                <div class="container">
+                    <form action="#">
+                        <div class="row">
+                            <div class="col-lg-6">
+
+                                <div class="axil-checkout-billing">
+                                    <h4 class="title mb--40">Shipping Details</h4>
+
+                                    <div class="form-group input-group">
+                                        <input type="checkbox" id="checkbox1">
+                                        <label for="checkbox1">Same as your current address?</label>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>First Name <span>*</span></label>
+                                                <input id="first-name" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Last Name <span>*</span></label>
+                                                <input id="last-name" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>City <span>*</span></label>
+                                        <select id="city-select">
+                                            <option value="0">Select</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Address Line 1 <span>*</span></label>
+                                        <input id="line-one" type="text" placeholder="House number and street name">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Address Line 2 <span>*</span></label>
+                                        <input id="line-two" type="text" placeholder="Apartment, suite, unit, etc.">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Postal Code <span>*</span></label>
+                                        <input id="postal-code" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Mobile <span>*</span></label>
+                                        <input id="mobile" type="text">
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="axil-order-summery order-checkout-summery">
+                                    <h5 class="title mb--20">Your Order</h5>
+                                    <div class="summery-table-wrap">
+                                        <table class="table summery-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Product</th>
+                                                    <th>Subtotal</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="st-tbody">
+
+                                                <tr class="order-product" id="st-item-tr">
+                                                    <td><span id="st-product-title">Product-1</span> x<span id="st-product-qty" class="quantity">1</span></td>
+                                                    <td>Rs. <span id="st-product-price"></span></td>
+                                                </tr>
+
+                                                <tr class="order-subtotal" id="st-subtotal-tr">
+                                                    <td>Subtotal</td>
+                                                    <td>Rs. <span id="st-product-total-amount"></span></td>
+                                                </tr>
+
+                                                <tr class="order-shipping" id="st-order-shipping-tr">
+                                                    <td colspan="2">
+                                                        <div class="shipping-amount">
+                                                            <span class="title">Shipping Charges</span>
+                                                            <span class="amount">Rs. <span id="st-product-shipping-charges">1,000.00</span></span>
+                                                        </div>
+
+                                                    </td>
+                                                </tr>
+
+                                                <tr class="order-total" id="st-order-total-tr">
+                                                    <td>Total</td>
+                                                    <td class="order-total-amount">Rs. <span id="st-order-total-amount">251,000.00</span></td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="order-payment-method">
+
+                                        <div class="single-payment">
+                                            <div class="input-group justify-content-between align-items-center">
+                                                <input type="radio" id="radio6" name="payment" checked>
+                                                <label for="radio6">Visa/Master Card</label>
+                                                <div>
+                                                    <img src="./assets/images/icons/visa.png" >
+                                                    <img src="./assets/images/icons/mastercard.png" >
+                                                </div>
+                                            </div>
+                                            <p>You can pay with your credit or debit card.</p>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="axil-btn btn-bg-primary checkout-btn" onclick="checkout();">Process to Checkout</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- End Checkout Area  -->
+
+        </main>
+
+
+        
+
+       
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Zay Shop</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            123 Consectetur at ligula 10660
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a class="text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="mailto:info@company.com">info@company.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="#">Luxury</a></li>
+                        <li><a class="text-decoration-none" href="#">Sport Wear</a></li>
+                        <li><a class="text-decoration-none" href="#">Men's Shoes</a></li>
+                        <li><a class="text-decoration-none" href="#">Women's Shoes</a></li>
+                        <li><a class="text-decoration-none" href="#">Popular Dress</a></li>
+                        <li><a class="text-decoration-none" href="#">Gym Accessories</a></li>
+                        <li><a class="text-decoration-none" href="#">Sport Shoes</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="#">Home</a></li>
+                        <li><a class="text-decoration-none" href="#">About Us</a></li>
+                        <li><a class="text-decoration-none" href="#">Shop Locations</a></li>
+                        <li><a class="text-decoration-none" href="#">FAQs</a></li>
+                        <li><a class="text-decoration-none" href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3">
+                    <div class="w-100 my-3 border-top border-light"></div>
+                </div>
+                <div class="col-auto me-auto">
+                    <ul class="list-inline text-left footer-icons">
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i
+                                    class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank"
+                                href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i
+                                    class="fab fa-twitter fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank"
+                                href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-auto">
+                    <label class="sr-only" for="subscribeEmail">Email address</label>
+                    <div class="input-group mb-2">
+                        <input type="text" class="form-control bg-dark border-light" id="subscribeEmail"
+                            placeholder="Email address">
+                        <div class="input-group-text btn-success text-light">Subscribe</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-100 bg-black py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <p class="text-left text-light">
+                            Copyright &copy; 2021 Company Name
+                            | Designed by <a rel="sponsored" href="https://templatemo.com"
+                                target="_blank">TemplateMo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- End Footer -->
+                      
+
+     
+   
+         <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
+        <!-- Modernizer JS -->
+        <script src="assets/js/vendor/modernizr.min.js"></script>
+        <!-- jQuery JS -->
+        <script src="assets/js/vendor/jquery.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="assets/js/vendor/popper.min.js"></script>
+        <script src="assets/js/vendor/bootstrap.min.js"></script>
+        <script src="assets/js/vendor/slick.min.js"></script>
+        <script src="assets/js/vendor/js.cookie.js"></script>
+        <!-- <script src="assets/js/vendor/jquery.style.switcher.js"></script> -->
+        <script src="assets/js/vendor/jquery-ui.min.js"></script>
+        <script src="assets/js/vendor/jquery.ui.touch-punch.min.js"></script>
+        <script src="assets/js/vendor/jquery.countdown.min.js"></script>
+        <script src="assets/js/vendor/sal.js"></script>
+        <script src="assets/js/vendor/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/vendor/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/js/vendor/isotope.pkgd.min.js"></script>
+        <script src="assets/js/vendor/counterup.js"></script>
+        <script src="assets/js/vendor/waypoints.min.js"></script>
+
+        <!-- Main JS -->
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/notification.js"></script>
+        <script src="assets/js/content-loader.js"></script>
+        <script src="assets/js/checkout.js"></script>
+
+
+
+        <!-- Start Script -->
+    <!-- <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/custom.js"></script> -->
+    
+    <script src="assets/js/header-dropdown.js"></script>
+    <!-- End Script -->
+
+    </body>
+
+</html>

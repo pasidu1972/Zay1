@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zay Store - My Account</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            min-height: 100vh;
+            color: #374151;
+        }
+
+        .header {
+            background: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid #dcfce7;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #10b981;
+        }
+
+        .divider {
+            color: #d1d5db;
+        }
+
+        .breadcrumb {
+            color: #6b7280;
+        }
+
+        .logout-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #6b7280;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .logout-btn:hover {
+            color: #374151;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px 20px;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 32px;
+        }
+
+        .sidebar {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+            height: fit-content;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #dcfce7;
+        }
+
+        .user-details h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .user-details p {
+            font-size: 14px;
+            color: #6b7280;
+            margin: 4px 0;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 4px;
+        }
+
+        .star {
+            color: #fbbf24;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 8px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #6b7280;
+            transition: all 0.2s;
+        }
+
+        .nav-link:hover {
+            background: #f0fdf4;
+            color: #10b981;
+        }
+
+        .nav-link.active {
+            background: #dcfce7;
+            color: #10b981;
+            font-weight: 500;
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 32px;
+        }
+
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+
+        .content-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #374151;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #10b981;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #059669;
+        }
+
+        .btn-secondary {
+            background: #dcfce7;
+            color: #10b981;
+        }
+
+        .btn-secondary:hover {
+            background: #bbf7d0;
+        }
+
+        .profile-form {
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+        }
+
+        .avatar-section {
+            position: relative;
+        }
+
+        .avatar-large {
+            width: 128px;
+            height: 128px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #dcfce7;
+        }
+
+        .avatar-edit {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 32px;
+            height: 32px;
+            background: #10b981;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+        }
+
+        .avatar-edit.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #374151;
+            margin-bottom: 8px;
+        }
+
+        .form-input {
+            padding: 12px 16px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #10b981;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        }
+
+        .form-value {
+            padding: 12px 0;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        .orders-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .order-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 24px;
+            transition: all 0.2s;
+        }
+
+        .order-card:hover {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .order-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .order-icon {
+            width: 48px;
+            height: 48px;
+            background: #f0fdf4;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #10b981;
+        }
+
+        .order-details h4 {
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .order-details p {
+            font-size: 14px;
+            color: #6b7280;
+            margin: 2px 0;
+        }
+
+        .order-summary {
+            text-align: right;
+        }
+
+        .order-total {
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+        .status-delivered {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .status-transit {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .status-processing {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .wishlist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .wishlist-item {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 16px;
+            transition: all 0.2s;
+        }
+
+        .wishlist-item:hover {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .wishlist-image {
+            width: 100%;
+            height: 128px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+
+        .wishlist-name {
+            font-weight: 500;
+            color: #374151;
+            margin-bottom: 8px;
+        }
+
+        .wishlist-price {
+            font-weight: 600;
+            color: #10b981;
+            margin-bottom: 16px;
+        }
+
+        .addresses-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .address-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 24px;
+        }
+
+        .address-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .address-info {
+            display: flex;
+            gap: 16px;
+        }
+
+        .address-icon {
+            color: #10b981;
+            margin-top: 2px;
+        }
+
+        .address-type {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .default-badge {
+            padding: 2px 8px;
+            background: #dcfce7;
+            color: #166534;
+            font-size: 12px;
+            border-radius: 12px;
+        }
+
+        .address-details {
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        .edit-btn {
+            color: #10b981;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .profile-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-form {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .wishlist-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <h1 class="logo">Zay</h1>
+                <span class="divider">|</span>
+                <span class="breadcrumb">My Account</span>
+            </div>
+            <a href="#" class="logout-btn">
+                <span>🚪</span>
+                <span>Sign Out</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="profile-grid">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="user-info">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face" alt="Profile" class="avatar">
+                    <div class="user-details">
+                        <h3>Sarah Johnson</h3>
+                        <p>Premium Member</p>
+                        <div class="rating">
+                            <span class="star">⭐</span>
+                            <span style="font-size: 12px; color: #6b7280;">4.9 Rating</span>
+                        </div>
+                    </div>
+                </div>
+
+                <nav>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active" data-tab="profile">
+                                <span>👤</span>
+                                <span>Profile Info</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-tab="orders">
+                                <span>📦</span>
+                                <span>My Orders</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-tab="wishlist">
+                                <span>❤️</span>
+                                <span>Wishlist</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-tab="addresses">
+                                <span>📍</span>
+                                <span>Addresses</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-tab="payment">
+                                <span>💳</span>
+                                <span>Payment Methods</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-tab="notifications">
+                                <span>🔔</span>
+                                <span>Notifications</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-tab="security">
+                                <span>🛡️</span>
+                                <span>Security</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-tab="settings">
+                                <span>⚙️</span>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <!-- Profile Tab -->
+                <div id="profile-content" class="tab-content">
+                    <div class="content-header">
+                        <h2 class="content-title">Profile Information</h2>
+                        <button class="btn btn-secondary" id="edit-profile-btn">
+                            <span>✏️</span>
+                            <span>Edit Profile</span>
+                        </button>
+                    </div>
+
+                    <div class="profile-form">
+                        <div class="avatar-section">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face" alt="Profile" class="avatar-large" id="profile-avatar">
+                            <button class="avatar-edit" id="avatar-edit-btn">
+                                <span>📷</span>
+                            </button>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label">Full Name</label>
+                                <div class="form-value" id="name-display">Sarah Johnson</div>
+                                <input type="text" class="form-input hidden" id="name-input" value="Sarah Johnson">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Email</label>
+                                <div class="form-value" id="email-display">sarah.johnson@email.com</div>
+                                <input type="email" class="form-input hidden" id="email-input" value="sarah.johnson@email.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Phone</label>
+                                <div class="form-value" id="phone-display">+1 (555) 123-4567</div>
+                                <input type="tel" class="form-input hidden" id="phone-input" value="+1 (555) 123-4567">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Member Since</label>
+                                <div class="form-value">January 2024</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Orders Tab -->
+                <div id="orders-content" class="tab-content hidden">
+                    <div class="content-header">
+                        <h2 class="content-title">My Orders</h2>
+                    </div>
+
+                    <div class="orders-list">
+                        <div class="order-card">
+                            <div class="order-header">
+                                <div class="order-info">
+                                    <div class="order-icon">
+                                        <span>📦</span>
+                                    </div>
+                                    <div class="order-details">
+                                        <h4>#ZAY2024001</h4>
+                                        <p>Placed on August 5, 2024</p>
+                                        <p>3 items</p>
+                                    </div>
+                                </div>
+                                <div class="order-summary">
+                                    <div class="order-total">$89.99</div>
+                                    <span class="status-badge status-delivered">Delivered</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-card">
+                            <div class="order-header">
+                                <div class="order-info">
+                                    <div class="order-icon">
+                                        <span>🚚</span>
+                                    </div>
+                                    <div class="order-details">
+                                        <h4>#ZAY2024002</h4>
+                                        <p>Placed on August 2, 2024</p>
+                                        <p>2 items</p>
+                                    </div>
+                                </div>
+                                <div class="order-summary">
+                                    <div class="order-total">$156.50</div>
+                                    <span class="status-badge status-transit">In Transit</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-card">
+                            <div class="order-header">
+                                <div class="order-info">
+                                    <div class="order-icon">
+                                        <span>⏳</span>
+                                    </div>
+                                    <div class="order-details">
+                                        <h4>#ZAY2024003</h4>
+                                        <p>Placed on July 28, 2024</p>
+                                        <p>1 item</p>
+                                    </div>
+                                </div>
+                                <div class="order-summary">
+                                    <div class="order-total">$45.00</div>
+                                    <span class="status-badge status-processing">Processing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wishlist Tab -->
+                <div id="wishlist-content" class="tab-content hidden">
+                    <div class="content-header">
+                        <h2 class="content-title">My Wishlist</h2>
+                    </div>
+
+                    <div class="wishlist-grid">
+                        <div class="wishlist-item">
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=280&h=128&fit=crop" alt="Headphones" class="wishlist-image">
+                            <h3 class="wishlist-name">Wireless Bluetooth Headphones</h3>
+                            <p class="wishlist-price">$79.99</p>
+                            <button class="btn btn-primary" style="width: 100%;">Add to Cart</button>
+                        </div>
+
+                        <div class="wishlist-item">
+                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=280&h=128&fit=crop" alt="Watch" class="wishlist-image">
+                            <h3 class="wishlist-name">Smart Fitness Watch</h3>
+                            <p class="wishlist-price">$199.99</p>
+                            <button class="btn btn-primary" style="width: 100%;">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Addresses Tab -->
+                <div id="addresses-content" class="tab-content hidden">
+                    <div class="content-header">
+                        <h2 class="content-title">Saved Addresses</h2>
+                        <button class="btn btn-primary">Add New Address</button>
+                    </div>
+
+                    <div class="addresses-list">
+                        <div class="address-card">
+                            <div class="address-header">
+                                <div class="address-info">
+                                    <span class="address-icon">📍</span>
+                                    <div>
+                                        <div class="address-type">
+                                            <h3>Home</h3>
+                                            <span class="default-badge">Default</span>
+                                        </div>
+                                        <div class="address-details">
+                                            123 Oak Street, Apt 4B<br>
+                                            New York, NY 10001
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="edit-btn">✏️</button>
+                            </div>
+                        </div>
+
+                        <div class="address-card">
+                            <div class="address-header">
+                                <div class="address-info">
+                                    <span class="address-icon">📍</span>
+                                    <div>
+                                        <div class="address-type">
+                                            <h3>Work</h3>
+                                        </div>
+                                        <div class="address-details">
+                                            456 Business Ave, Suite 200<br>
+                                            New York, NY 10005
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="edit-btn">✏️</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Tabs -->
+                <div id="payment-content" class="tab-content hidden">
+                    <div class="content-header">
+                        <h2 class="content-title">Payment Methods</h2>
+                    </div>
+                    <p style="color: #6b7280;">This section is coming soon...</p>
+                </div>
+
+                <div id="notifications-content" class="tab-content hidden">
+                    <div class="content-header">
+                        <h2 class="content-title">Notifications</h2>
+                    </div>
+                    <p style="color: #6b7280;">This section is coming soon...</p>
+                </div>
+
+                <div id="security-content" class="tab-content hidden">
+                    <div class="content-header">
+                        <h2 class="content-title">Security</h2>
+                    </div>
+                    <p style="color: #6b7280;">This section is coming soon...</p>
+                </div>
+
+                <div id="settings-content" class="tab-content hidden">
+                    <div class="content-header">
+                        <h2 class="content-title">Settings</h2>
+                    </div>
+                    <p style="color: #6b7280;">This section is coming soon...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab switching functionality
+        const navLinks = document.querySelectorAll('.nav-link');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                navLinks.forEach(l => l.classList.remove('active'));
+                
+                // Add active class to clicked link
+                link.classList.add('active');
+                
+                // Hide all tab contents
+                tabContents.forEach(content => content.classList.add('hidden'));
+                
+                // Show selected tab content
+                const tabId = link.getAttribute('data-tab') + '-content';
+                document.getElementById(tabId).classList.remove('hidden');
+            });
+        });
+
+        // Profile editing functionality
+        const editBtn = document.getElementById('edit-profile-btn');
+        const avatarEditBtn = document.getElementById('avatar-edit-btn');
+        let isEditing = false;
+
+        editBtn.addEventListener('click', () => {
+            isEditing = !isEditing;
+            
+            if (isEditing) {
+                // Switch to edit mode
+                editBtn.innerHTML = '<span>💾</span><span>Save Changes</span>';
+                editBtn.classList.remove('btn-secondary');
+                editBtn.classList.add('btn-primary');
+                
+                // Show input fields, hide display values
+                document.getElementById('name-display').classList.add('hidden');
+                document.getElementById('name-input').classList.remove('hidden');
+                document.getElementById('email-display').classList.add('hidden');
+                document.getElementById('email-input').classList.remove('hidden');
+                document.getElementById('phone-display').classList.add('hidden');
+                document.getElementById('phone-input').classList.remove('hidden');
+                
+                // Show avatar edit button
+                avatarEditBtn.classList.add('show');
+            } else {
+                // Switch to view mode and save changes
+                editBtn.innerHTML = '<span>✏️</span><span>Edit Profile</span>';
+                editBtn.classList.remove('btn-primary');
+                editBtn.classList.add('btn-secondary');
+                
+                // Update display values with input values
+                document.getElementById('name-display').textContent = document.getElementById('name-input').value;
+                document.getElementById('email-display').textContent = document.getElementById('email-input').value;
+                document.getElementById('phone-display').textContent = document.getElementById('phone-input').value;
+                
+                // Show display values, hide input fields
+                document.getElementById('name-display').classList.remove('hidden');
+                document.getElementById('name-input').classList.add('hidden');
+                document.getElementById('email-display').classList.remove('hidden');
+                document.getElementById('email-input').classList.add('hidden');
+                document.getElementById('phone-display').classList.remove('hidden');
+                document.getElementById('phone-input').classList.add('hidden');
+                
+                // Hide avatar edit button
+                avatarEditBtn.classList.remove('show');
+                
+                // Show success message
+                showNotification('Profile updated successfully!');
+            }
+        });
+
+        // Avatar edit functionality
+        avatarEditBtn.addEventListener('click', () => {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        document.getElementById('profile-avatar').src = e.target.result;
+                        document.querySelector('.avatar').src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            };
+            input.click();
+        });
+
+        // Add to cart functionality
+        document.querySelectorAll('.wishlist-item button').forEach(button => {
+            button.addEventListener('click', () => {
+                const itemName = button.parentElement.querySelector('.wishlist-name').textContent;
+                showNotification(`${itemName} added to cart!`);
+            });
+        });
+
+        // Notification system
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #10b981;
+                color: white;
+                padding: 12px 24px;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+                animation: slideIn 0.3s ease;
+            `;
+            notification.textContent = message;
+            
+            // Add animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideIn 0.3s ease reverse';
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set default active tab
+            document.querySelector('.nav-link[data-tab="profile"]').classList.add('active');
+            document.getElementById('profile-content').classList.remove('hidden');
+        });
+
+        // Logout functionality
+        document.querySelector('.logout-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            if (confirm('Are you sure you want to sign out?')) {
+                showNotification('Signing out...');
+                setTimeout(() => {
+                    window.location.href = '/login'; // Redirect to login page
+                }, 1500);
+            }
+        });
+
+        // Address management
+        document.querySelectorAll('.edit-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                showNotification('Address editing feature coming soon!');
+            });
+        });
+
+        // Add new address
+        document.querySelector('.addresses-list').parentElement.querySelector('.btn-primary').addEventListener('click', () => {
+            showNotification('Add new address feature coming soon!');
+        });
+
+        // Order tracking
+        document.querySelectorAll('.order-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const orderId = card.querySelector('h4').textContent;
+                showNotification(`Viewing details for order ${orderId}`);
+            });
+        });
+
+        // Mobile responsiveness
+        function checkMobile() {
+            if (window.innerWidth <= 768) {
+                document.querySelector('.profile-grid').style.gridTemplateColumns = '1fr';
+            } else {
+                document.querySelector('.profile-grid').style.gridTemplateColumns = '1fr 3fr';
+            }
+        }
+
+        window.addEventListener('resize', checkMobile);
+        checkMobile();
+    </script>
+</body>
+</html>

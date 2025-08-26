@@ -1,0 +1,587 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ZAy</title>
+        <meta name="robots" content="noindex, follow" />
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="assets/apple-icon.png">
+
+        <!-- CSS
+        ============================================ -->
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/vendor/font-awesome.css">
+        <link rel="stylesheet" href="assets/css/vendor/flaticon/flaticon.css">
+        <link rel="stylesheet" href="assets/css/vendor/slick.css">
+        <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
+        <link rel="stylesheet" href="assets/css/vendor/jquery-ui.min.css">
+        <link rel="stylesheet" href="assets/css/vendor/sal.css">
+        <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/vendor/base.css">
+        <link rel="stylesheet" href="assets/css/style.min.css">
+        
+        <link rel="stylesheet" href="assets/css/notification.css">
+
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+
+    </head>
+
+     <!-- Start Top Nav -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+        <div class="container text-light">
+            <div class="w-100 d-flex justify-content-between">
+                <div>
+                    <i class="fa fa-envelope mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none"
+                        href="mailto:info@company.com">info@company.com</a>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                </div>
+                <div>
+                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i
+                            class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.instagram.com/" target="_blank"><i
+                            class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://twitter.com/" target="_blank"><i
+                            class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i
+                            class="fab fa-linkedin fa-sm fa-fw"></i></a>
+                    <div>
+
+                    </div>
+                </div>
+            </div>
+    </nav>
+    <!-- Close Top Nav -->
+
+
+   <!-- Header -->
+<nav class="navbar navbar-expand-lg navbar-light shadow">
+    <div class="container d-flex justify-content-between align-items-center">
+
+        <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+            Zay
+        </a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+            data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between"
+            id="templatemo_main_nav">
+            <div class="flex-fill">
+                <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="navbar align-self-center d-flex">
+                <!-- Mobile Search -->
+                <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+                        <div class="input-group-text">
+                            <i class="fa fa-fw fa-search"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search Icon -->
+                <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal"
+                    data-bs-target="#templatemo_search">
+                    <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                </a>
+
+                <!-- Cart -->
+                <a class="nav-icon position-relative text-decoration-none" href="cart.html">
+                    <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                    <span
+                        class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
+                </a>
+
+                <!-- User Profile Dropdown -->
+                
+                    
+                        
+                    
+                    <ul class="dropdown-menu dropdown-menu-end user-dropdown" aria-labelledby="userDropdown">
+                        <!-- User name display when signed in -->
+                        <li id="userNameDisplay" class="user-name d-none">Welcome, User!</li>
+
+                        <!-- Options when NOT signed in -->
+                        <li id="signInOption">
+                            <a class="dropdown-item" href="sign-in.html">
+                                <i class="fas fa-sign-in-alt"></i> Sign In
+                            </a>
+                        </li>
+                        <li id="signUpOption">
+                            <a class="dropdown-item" href="sign-up.html">
+                                <i class="fas fa-user-plus"></i> Sign Up
+                            </a>
+                        </li>
+
+                        <!-- Options when signed in -->
+                        <li id="profileOption" class="d-none">
+                            <a class="dropdown-item" href="my-account.html">
+                                <i class="fas fa-user"></i> Profile
+                            </a>
+                        </li>
+                        <li id="signOutOption" class="d-none">
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li id="signOutButton" class="d-none">
+                            <a class="dropdown-item" href="#" onclick="signOut()">
+                                <i class="fas fa-sign-out-alt"></i> Sign Out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Purchase History -->
+                <a class="nav-icon position-relative text-decoration-none" href="purchasinghistory.html">
+                    <i class="fa fa-fw fa-receipt text-dark mr-3"></i>
+                    <span
+                        class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+9</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- Close Header -->
+
+
+    <body class="sticky-header" onload="loadProductData();loadData();">
+        
+
+        
+
+            <!-- Start My Account Area  -->
+            <div class="axil-dashboard-area mt--30 mb--50">
+                <div class="container">
+                    <div class="axil-dashboard-warp">
+                        <div class="axil-dashboard-author">
+                            <div class="media">
+                               
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-3 col-md-4">
+                                <aside class="axil-dashboard-aside">
+                                    <nav class="axil-dashboard-nav">
+                                        <div class="nav nav-tabs" role="tablist">
+                                            <a class="nav-item nav-link active" data-bs-toggle="tab" href="#nav-account" role="tab" aria-selected="false"><i class="fas fa-user"></i>Account Details</a>
+                                            
+                                            <a class="nav-item nav-link" data-bs-toggle="tab" href="#nav-orders" role="tab" aria-selected="false"><i class="fas fa-shopping-basket"></i>Orders</a>
+                                            <a class="nav-item nav-link" data-bs-toggle="tab" href="#nav-address" role="tab" aria-selected="false"><i class="fas fa-home"></i>Addresses</a>
+                                            <a class="nav-item nav-link" href="#" onclick="signOut();"><i class="fal fa-sign-out"></i>Logout</a>
+                                        </div>
+                                    </nav>
+                                </aside>
+                            </div>
+                            <div class="col-xl-9 col-md-8">
+                                <div class="tab-content">
+
+                                    <div class="tab-pane fade" id="nav-add-product" role="tabpanel">
+                                        <div class="axil-dashboard-overview">
+                                            
+                                            <div class="welcome-text">Create New Product</div>
+                                            
+                                            <p class="text-danger" id="message"></p>
+                                            
+                                            <form class="account-details-form">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <label>Brand</label>
+                                                            <select id="brand" onchange="loadModels();">
+                                                                <option value="0">Select</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <label>Model</label>
+                                                            <select id="model">
+                                                                <option value="0">Select</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>                                                        
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label>Title</label>
+                                                            <input type="text" class="form-control" id="title" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label>Description</label>
+                                                            <textarea cols="1" rows="2" id="description"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <label>Storage</label>
+                                                            <select id="storage">
+                                                                <option value="0">Select</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <label>Color</label>
+                                                            <select id="color">
+                                                                <option value="0">Select</option>
+                                                            </select>
+                                                        </div>
+                                                    </div> 
+
+                                                    <div class="col-lg-4">
+                                                        <div class="form-group">
+                                                            <label>Condition</label>
+                                                            <select id="condition">
+                                                               <option value="0">Select</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-4">
+                                                        <div class="form-group">
+                                                            <label>Price</label>
+                                                            <input id="price" type="text" class="form-control" pattern="^\d+(\.\d{2})?$" placeholder="0.00">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <div class="form-group">
+                                                            <label>Quantity</label>
+                                                            <input id="qty" type="number" class="form-control" min="1" value="1">
+                                                        </div>
+                                                    </div> 
+
+                                                    <div class="col-lg-4">
+                                                        <label>Image 1</label>
+                                                        <input id="img1" class="form-control b2" type="file" accept="image/*">
+                                                    </div>
+
+                                                    <div class="col-lg-4">
+                                                        <label>Image 2</label>
+                                                        <input id="img2"  class="form-control b2" type="file" accept="image/*">
+                                                    </div>
+
+                                                    <div class="col-lg-4">
+                                                        <label>Image 3</label>
+                                                        <input  id="img3"  class="form-control b2" type="file" accept="image/*">
+                                                    </div>
+
+                                                    <div class="col-12">
+                                                        <div class="form-group mb--0 mt--30 d-grid">
+                                                            <input type="button" class="axil-btn" onclick="saveProuct();" value="Add Product To Listing">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="nav-orders" role="tabpanel">
+                                        <div class="axil-dashboard-order">
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">Order</th>
+                                                            <th scope="col">Products</th>
+                                                            <th scope="col">Date</th>
+                                                            <th scope="col">Status</th>
+                                                            <th scope="col">Total</th>
+                                                            <th scope="col">Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row">#001</th>
+                                                            <td>product 3 <br/> </td>
+                                                            <td>2025.08.14</td>
+                                                            <td>pending</td>
+                                                            <td>$ 12.00</td>
+                                                            <td><a href="#" class="axil-btn view-btn">View</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-product-listing" role="tabpanel">
+                                        <div class="axil-dashboard-order">
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">Id</th>
+                                                            <th scope="col">Title</th>
+                                                            <th scope="col">Price</th>
+                                                            <th scope="col">Quantity</th>
+                                                            <th scope="col">Date</th>
+                                                            <th scope="col">Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row">#1234</th>
+                                                            <td>Apple iPhone 15 Pro</td>
+                                                            <td>Rs 0.00</td>
+                                                            <td>1</td>
+                                                            <td>September 02, 2024</td>
+                                                            <td><a href="#" class="axil-btn view-btn">View</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-address" role="tabpanel">
+                                        <div class="axil-dashboard-address">
+                                            <div class="row row--30">
+                                                <div class="col-lg-12">
+                                                    <div class="address-info mb--40">
+                                                        <div class="addrss-header d-flex align-items-center justify-content-between">
+                                                            <h4 class="title mb-0">Current Shipping Address</h4>
+                                                            <a href="#" class="address-edit"><i class="far fa-edit"></i></a>
+                                                        </div>
+                                                        <ul class="address-details" id="addressUL">
+                                                            <li id="addName">Name: Name</li>
+                                                            <li id="addEmail">Email:  example@email.com</li>
+                                                            <li id="contact">Phone:  Phone Number</li>
+                                                            
+                                                        </ul>
+<!--                                                        <p class="text-danger" id="message">hi</p>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade show active" id="nav-account" role="tabpanel">
+                                        <div class="col-lg-9">
+                                            <div class="axil-dashboard-account">
+<!--                                                <form class="account-details-form">-->
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label>First Name</label>
+                                                                <input type="text" class="form-control" id="firstName" value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label>Last Name</label>
+                                                                <input type="text" class="form-control" id="lastName" value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label>Address Line 1</label>
+                                                                <input type="text" class="form-control" id="lineOne" value="">
+                                                            </div>
+                                                        </div>
+                                                        
+                                                         <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label>Address Line 2</label>
+                                                                <input type="text" class="form-control" id="lineTwo" value="">
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label>Postal Code</label>
+                                                                <input type="text" class="form-control" id="postalCode" value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <label>City</label>
+                                                            <select id="citySelect">
+                                                                <option value="0">Select</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                        
+                                                        
+
+                                                        <div class="col-12">
+                                                            <h5 class="title">Password Change</h5>
+                                                            <div class="form-group">
+                                                                <label>Current Password</label>
+                                                                <input type="password" class="form-control" value="" id="currentPassword">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>New Password</label>
+                                                                <input type="password" class="form-control" id="newPassword">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Confirm New Password</label>
+                                                                <input type="password" class="form-control" id="confirmPassword">
+                                                            </div>
+                                                            
+                                                             
+                                                            
+                                                            <div class="form-group mb--0 d-grid">
+                                                                <button class="axil-btn btn btn-primary" onclick="saveChanges();">Save Changes</button>
+                                                            </div>
+                                                            <p class="text-danger" id="message"></p>
+                                                        </div>
+                                                    </div>
+<!--                                                </form>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End My Account Area  -->
+
+        </main>
+
+        
+
+        
+        <!-- End Footer Area  -->
+
+        <!-- Header Search Modal End -->
+        <div class="header-search-modal" id="header-search-modal">
+            <button class="card-close sidebar-close"><i class="fas fa-times"></i></button>
+            <div class="header-search-wrap">
+                <div class="card-header">
+                    <form action="#">
+                        <div class="input-group">
+                            <input type="search" class="form-control" name="prod-search" id="prod-search" placeholder="Search">
+                            <button type="submit" class="axil-btn btn-bg-primary"><i class="far fa-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-body">
+                    <div class="search-result-header">
+                        <h6 class="title">1 Result Found</h6>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="psearch-results">
+                        <div class="axil-product-list">
+                            <div class="thumbnail">
+                                <a href="#">
+                                    <img src="./assets/images/product/product-03.png" alt="Product Image-1">
+                                </a>
+                            </div>
+                            <div class="product-content">
+
+                                <h6 class="product-title"><a href="#">Product Title-1</a></h6>
+                                <div class="product-price-variant">
+                                    <span class="price current-price">Rs. 0.00</span>
+                                </div>
+                                <div class="product-cart">
+                                    <a href="#" class="cart-btn"><i class="fal fa-shopping-cart"></i></a>
+                                    <a href="#" class="cart-btn"><i class="fal fa-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header Search Modal End -->
+
+
+
+        <div class="cart-dropdown" id="cart-dropdown">
+            <div class="cart-content-wrap">
+                <div class="cart-header">
+                    <h2 class="header-title">Cart Review</h2>
+                    <button class="cart-close sidebar-close"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="cart-body">
+                    <ul class="cart-item-list">
+                        <li class="cart-item">
+                            <div class="item-img">
+                                <a href="#"><img src="assets/images/product/product-01.png" alt="Product Image-1"></a>
+                                <button class="close-btn"><i class="fas fa-times"></i></button>
+                            </div>
+                            <div class="item-content">
+                                <h3 class="item-title"><a href="#">Product Title-1</a></h3>
+                                <div class="item-price"><span class="currency-symbol">Rs. </span>0.00</div>
+                                <div class="pro-qty item-quantity">
+                                    <input type="number" class="quantity-input" value="1">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cart-footer">
+                    <h3 class="cart-subtotal">
+                        <span class="subtotal-title">Subtotal:</span>
+                        <span class="subtotal-amount">Rs. 0.00</span>
+                    </h3>
+                    <div class="group-btn">
+                        <a href="#" class="axil-btn btn-bg-primary viewcart-btn">View Cart</a>
+                        <a href="#" class="axil-btn btn-bg-secondary checkout-btn">Checkout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JS
+    ============================================ -->
+        <!-- Modernizer JS -->
+        <script src="assets/js/vendor/modernizr.min.js"></script>
+        <!-- jQuery JS -->
+        <script src="assets/js/vendor/jquery.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="assets/js/vendor/popper.min.js"></script>
+        <script src="assets/js/vendor/bootstrap.min.js"></script>
+        <script src="assets/js/vendor/slick.min.js"></script>
+        <script src="assets/js/vendor/js.cookie.js"></script>
+        <!-- <script src="assets/js/vendor/jquery.style.switcher.js"></script> -->
+        <script src="assets/js/vendor/jquery-ui.min.js"></script>
+        <script src="assets/js/vendor/jquery.ui.touch-punch.min.js"></script>
+        <script src="assets/js/vendor/jquery.countdown.min.js"></script>
+        <script src="assets/js/vendor/sal.js"></script>
+        <script src="assets/js/vendor/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/vendor/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/js/vendor/isotope.pkgd.min.js"></script>
+        <script src="assets/js/vendor/counterup.js"></script>
+        <script src="assets/js/vendor/waypoints.min.js"></script>
+
+        <!-- Main JS -->
+        <script src="assets/js/main.js"></script>
+          <script src="assets/js/sign-out.js"></script>
+           <script src="assets/js/my-account.js"></script>
+            <script src="assets/js/product-listing.js"></script>
+             <script src="assets/js/notification.js"></script>
+
+
+    </body>
+
+</html>
